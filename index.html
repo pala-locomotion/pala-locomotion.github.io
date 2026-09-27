@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PALA: a posture-aware locomotion agent for quadruped robots. Learning Embodied Quadruped Agents for Posture-Aware Locomotion, DAI 2025.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="PALA | Posture-Aware Locomotion">
+  <meta property="og:description" content="Learning Embodied Quadruped Agents for Posture-Aware Locomotion · DAI 2025">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pala-locomotion.github.io/">
+  <meta property="og:image" content="https://pala-locomotion.github.io/static/images/teaser.png">
+  <title>PALA | Learning Embodied Quadruped Agents for Posture-Aware Locomotion</title>
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="hero publication-header">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <p class="publication-venue">DAI 2025 <span aria-hidden="true">·</span> London, United Kingdom</p>
+      <h1 class="publication-title"><span class="project-name">PALA</span><span class="paper-title">Learning Embodied Quadruped Agents<br class="desktop-break"> for Posture-Aware Locomotion</span></h1>
+      <div class="publication-authors">
+        <span class="author-block">Xiangyu Miao<sup>1</sup></span>
+        <span class="author-block">Jun Sun<sup>2,†</sup></span>
+        <span class="author-block">Hang Lai<sup>1</sup></span>
+        <span class="author-block">Xinpeng Di<sup>2</sup></span>
+        <span class="author-block">Jiahang Cao<sup>1</sup></span>
+        <span class="author-block">Yong Yu<sup>1</sup></span>
+        <span class="author-block">Weinan Zhang<sup>1,†</sup></span>
+      </div>
+      <div class="affiliations"><span><sup>1</sup> Shanghai Jiao Tong University</span><span><sup>2</sup> Shanghai Aerospace Control Technology Institute</span></div>
+      <p class="author-note">† Corresponding authors</p>
+      <div class="institution-logos" aria-label="Institution logos">
+        <img src="static/images/sjtu-logo.png" alt="Shanghai Jiao Tong University" width="271" height="271">
+        <img src="static/images/casc-logo.png" alt="China Aerospace Science and Technology Corporation (CASC), as shown on the PALA conference poster" width="512" height="512">
+      </div>
+      <div class="publication-links">
+        <a class="button is-dark is-rounded" href="paper/pala.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></svg><span>Paper</span></a>
+        <a class="button is-dark is-rounded" href="https://doi.org/10.1145/3772429.3772430" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3 10 14M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg><span>ACM Digital Library</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <section class="teaser section" aria-label="PALA in the real world">
+    <div class="container is-max-desktop">
+      <figure>
+        <img src="static/images/teaser.png" width="1800" height="541" alt="Eight real-world demonstrations of the Unitree A1: controlling pitch and roll, carrying an object on slopes and stairs, and crouching or tilting through confined spaces." fetchpriority="high">
+        <figcaption><strong>Locomotion with posture in mind.</strong> PALA jointly controls velocity and body posture, enabling a quadruped robot to traverse varied terrain and confined spaces.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="section video-section" aria-labelledby="video-title">
+    <div class="container is-max-desktop">
+      <h2 id="video-title" class="title is-3 has-text-centered">Video</h2>
+      <!-- Replace this placeholder with a <video controls playsinline preload="metadata"> when the final video is ready. -->
+      <div class="video-placeholder" role="img" aria-label="Project demonstration video coming soon">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="28" rx="5"/><path d="m21 18 10 6-10 6z"/></svg>
+        <p>Video coming soon</p><span>Posture-aware locomotion in action</span>
+      </div>
+    </div>
+  </section>
+  <section class="section abstract-section" aria-labelledby="abstract-title">
+    <div class="container reading-width">
+      <h2 id="abstract-title" class="title is-3 has-text-centered">Abstract</h2>
+      <div class="content abstract-copy"><p>Recent advances in embodied intelligence have opened new directions for autonomous agents to operate in complex physical environments. In this work, we propose a <strong>P</strong>osture-<strong>A</strong>ware <strong>L</strong>ocomotion <strong>A</strong>gent (<strong>PALA</strong>) trained via deep reinforcement learning. Unlike traditional quadruped agents that focus solely on velocity tracking, our agent learns to track task-oriented 6D motion commands, including linear and angular velocities, as well as desired body posture (height, pitch, and roll), in real time using only proprioceptive sensing and external commands. To improve robustness and terrain adaptability, we introduce two key heuristic designs: a progressive reward curriculum and an orientation command resampling strategy. Combined with asymmetric actor-critic training, adversarial motion priors, and domain randomization, these components enable a single policy to generalize zero-shot across diverse and challenging environments. Additionally, we extend PALA to handle high-level instructions by integrating it with an autonomous agent powered by a large language model (LLM), enabling natural language task descriptions to be directly translated into executable 6D commands. Extensive simulation and real-world experiments demonstrate the responsiveness and accuracy of our posture-aware locomotion agent, underscoring its potential as a core component for embodied systems operating in unstructured settings.</p></div>
+    </div>
+  </section>
+  <section class="section method-section" aria-labelledby="method-title">
+    <div class="container is-max-desktop">
+      <h2 id="method-title" class="title is-3 has-text-centered">Method Overview</h2>
+      <p class="section-intro">One policy for velocity and posture control, from simulation to the real world.</p>
+      <figure class="method-figure">
+        <a href="static/images/method-overview.png" aria-label="Open the full-resolution PALA framework diagram"><img src="static/images/method-overview.png" width="2200" height="1513" loading="lazy" alt="PALA framework: an LLM or joystick provides motion commands; a history encoder and actor produce actions. A critic and discriminator support training with privileged observations and motion priors."></a>
+        <figcaption>PALA combines an asymmetric actor–critic architecture, adversarial motion priors, a progressive reward curriculum, and orientation command resampling. <span class="legend-green">Green modules</span> run on the robot; <span class="legend-red">red modules</span> are used during training. The <span class="legend-gold">yellow interface</span> supplies motion commands through an LLM or joystick.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+    <div class="container is-max-desktop">
+      <div class="citation-heading"><h2 id="citation-title" class="title is-3">BibTeX</h2><button id="copy-bibtex" class="button is-small is-rounded" type="button" hidden>Copy citation</button></div>
+      <pre><code id="bibtex">@inproceedings{miao2025pala,
+  author    = {Miao, Xiangyu and Sun, Jun and Lai, Hang and Di, Xinpeng
+               and Cao, Jiahang and Yu, Yong and Zhang, Weinan},
+  title     = {Learning Embodied Quadruped Agents for
+               Posture-Aware Locomotion},
+  booktitle = {The Seventh International Conference on
+               Distributed Artificial Intelligence},
+  series    = {DAI &#x27;25},
+  year      = {2025},
+  publisher = {Association for Computing Machinery},
+  doi       = {10.1145/3772429.3772430},
+  url       = {https://doi.org/10.1145/3772429.3772430}
+}</code></pre>
+      <p id="copy-status" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+<section class="section contact-section" id="contact" aria-labelledby="contact-title">
+  <div class="container is-max-desktop">
+    <h2 id="contact-title" class="title is-4">Contact</h2>
+    <div class="contact-actions">
+      <a href="https://xiangyumiao.pages.dev/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg>Homepage</a>
+      <button type="button" id="email-trigger" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><span>Email</span></button>
+      <a href="static/images/wechat-qr.jpg" id="wechat-trigger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 1-8 8H8l-5 3 1.5-5A8 8 0 1 1 20 11Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>WeChat</a>
+    </div>
+  </div>
+</section>
+<dialog id="email-dialog" class="contact-dialog email-dialog" aria-labelledby="email-title">
+  <form method="dialog"><button class="dialog-close" aria-label="Close email address" autofocus>×</button></form>
+  <h2 id="email-title" class="title is-4">Email</h2>
+  <p><a id="contact-email" href="mailto:thedarkknight@sjtu.edu.cn">thedarkknight@sjtu.edu.cn</a></p>
+  <button id="copy-email" class="button is-small is-rounded" type="button">Copy email</button>
+  <p id="email-copy-status" role="status" aria-live="polite"></p>
+</dialog>
+<dialog id="wechat-dialog" class="contact-dialog" aria-labelledby="wechat-title">
+  <form method="dialog"><button class="dialog-close" aria-label="Close WeChat QR code" autofocus>×</button></form>
+  <h2 id="wechat-title" class="title is-4">WeChat</h2>
+  <p>Xiangyu Miao</p>
+  <img src="static/images/wechat-qr.jpg" alt="Xiangyu Miao's WeChat QR code" loading="lazy">
+  <p class="qr-hint">Scan with WeChat to connect.</p>
+</dialog>
+<footer class="footer">
+  <div class="container has-text-centered">
+    <p>Website adapted from <a href="https://nerfies.github.io/">Nerfies</a> · <a href="https://github.com/nerfies/nerfies.github.io">Original template</a></p>
+    <p>Website template and adaptations: <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Paper and figures: <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
